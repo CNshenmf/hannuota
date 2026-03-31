@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 适配移动端、iPad、PC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>儿童汉诺塔</title>
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>汉诺塔游戏</h1>
+
+        <!-- 难度选择 -->
+        <div class="difficulty">
+            <button class="diff-btn" data-num="4">4 盘</button>
+            <button class="diff-btn" data-num="5">5 盘</button>
+            <button class="diff-btn" data-num="6">6 盘</button>
+        </div>
+
+        <!-- 步数 & 计时 -->
+        <div class="info">
+            <div>步数：<span id="steps">0</span></div>
+            <div>时间：<span id="timer">00:00</span></div>
+        </div>
+
+        <!-- 游戏提示 -->
+        <div id="message" class="message"></div>
+
+        <!-- 游戏区域：3根柱子 -->
+        <div class="tower-container">
+            <div class="tower" id="tower1"></div>
+            <div class="tower" id="tower2"></div>
+            <div class="tower" id="tower3"></div>
+        </div>
+
+        <!-- 功能按钮 -->
+        <div class="buttons">
+            <button id="help">规则说明</button>
+            <button id="sound">音效开关</button>
+            <button id="reset">重新开始</button>
+            <button id="undo">撤销上一步</button>
+            <button id="demo">自动演示</button>
+        </div>
+    </div>
+
+    <!-- 规则弹窗 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>汉诺塔规则</h2>
+            <p>1. 每次只能移动一个盘子</p>
+            <p>2. 大盘子不能放在小盘子上面</p>
+            <p>3. 把所有盘子从第一根柱子移到第三根柱子就胜利啦！</p>
+        </div>
+    </div>
+
+    <!-- 引入游戏逻辑 -->
+    <script src="script.js"></script>
+</body>
+</html>

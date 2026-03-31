@@ -1,0 +1,162 @@
+/* ======================
+可修改区域（零基础也能改）
+======================= */
+:root {
+    --bg-color: #f7f9fc;          /* 背景色 */
+    --tower-color: #c8d6e5;       /* 柱子颜色 */
+    --btn-color: #74b9ff;         /* 按钮颜色 */
+    --text-color: #2d3436;        /* 文字颜色 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+h1 {
+    margin: 10px 0 20px;
+    font-size: 28px;
+}
+
+/* 难度按钮 */
+.difficulty {
+    margin: 15px 0;
+}
+.diff-btn {
+    padding: 10px 16px;
+    margin: 0 6px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--btn-color);
+    color: white;
+    cursor: pointer;
+}
+.diff-btn.active {
+    background: #0984e3;
+}
+
+/* 步数 & 计时 */
+.info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* 提示文字 */
+.message {
+    height: 24px;
+    color: #e74c3c;
+    font-size: 16px;
+}
+
+/* 游戏区域 */
+.tower-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 320px;
+    margin: 30px 0;
+    position: relative;
+}
+
+/* 柱子 */
+.tower {
+    width: 10px;
+    height: 220px;
+    background: var(--tower-color);
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+/* 盘子样式 */
+.disk {
+    height: 28px;
+    border-radius: 8px;
+    margin: 2px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    cursor: grab;
+    transition: 0.2s;
+}
+.disk:active {
+    cursor: grabbing;
+}
+
+/* 功能按钮 */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.buttons button {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    background: var(--btn-color);
+    color: white;
+    cursor: pointer;
+}
+
+/* 规则弹窗 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: left;
+}
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 移动端适配 */
+@media (max-width: 600px) {
+    .tower-container {
+        height: 260px;
+    }
+    .disk {
+        height: 24px;
+    }
+}
